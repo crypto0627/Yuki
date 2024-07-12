@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServices.PaymentService";
+
+service Payment {
+  rpc MakePayment (PaymentRequest) returns (PaymentReply);
+}
+
+message PaymentRequest {
+  int32 accountId = 1;
+  string purchaseDate = 2;
+  string productName = 3;
+  double purchaseAmount = 4;
+}
+
+message PaymentReply {
+  bool success = 1;
+  string message = 2;
+}
