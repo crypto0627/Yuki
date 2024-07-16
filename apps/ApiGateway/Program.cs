@@ -1,16 +1,18 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Grpc.Net.Client;
-using ProductServiceNamespace.Protos;
+using Microsoft.OpenApi.Models;
+using GrpcServices.AccountService;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Configure gRPC client
+builder.Services.AddGrpcClient<GrpcServices.AccountService.Account.AccountClient>(o =>
+{
+    o.Address = new Uri("http://localhost:5047"); // 修改为 gRPC 服务的地址
+});
 
 var app = builder.Build();
 
@@ -21,8 +23,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();

@@ -1,33 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "/home/jakekuo/code/tickstream/apps/ApiGateway/ApiGateway.csproj": {}
+    "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ApiGateway\\ApiGateway.csproj": {}
   },
   "projects": {
-    "/home/jakekuo/code/tickstream/apps/ApiGateway/ApiGateway.csproj": {
+    "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ApiGateway\\ApiGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jakekuo/code/tickstream/apps/ApiGateway/ApiGateway.csproj",
+        "projectUniqueName": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ApiGateway\\ApiGateway.csproj",
         "projectName": "ApiGateway",
-        "projectPath": "/home/jakekuo/code/tickstream/apps/ApiGateway/ApiGateway.csproj",
-        "packagesPath": "/home/jakekuo/.nuget/packages/",
-        "outputPath": "/home/jakekuo/code/tickstream/apps/ApiGateway/obj/",
+        "projectPath": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ApiGateway\\ApiGateway.csproj",
+        "packagesPath": "C:\\Users\\JakeKuo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ApiGateway\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/jakekuo/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\JakeKuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/jakekuo/code/tickstream/apps/ProductService/ProductService.csproj": {
-                "projectPath": "/home/jakekuo/code/tickstream/apps/ProductService/ProductService.csproj"
+              "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ProductService\\ProductService.csproj": {
+                "projectPath": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ProductService\\ProductService.csproj"
               }
             }
           }
@@ -36,6 +43,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -52,7 +64,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.6.2, )"
             }
           },
           "imports": [
@@ -74,26 +86,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/jakekuo/code/tickstream/apps/ProductService/ProductService.csproj": {
+    "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ProductService\\ProductService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jakekuo/code/tickstream/apps/ProductService/ProductService.csproj",
+        "projectUniqueName": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ProductService\\ProductService.csproj",
         "projectName": "ProductService",
-        "projectPath": "/home/jakekuo/code/tickstream/apps/ProductService/ProductService.csproj",
-        "packagesPath": "/home/jakekuo/.nuget/packages/",
-        "outputPath": "/home/jakekuo/code/tickstream/apps/ProductService/obj/",
+        "projectPath": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ProductService\\ProductService.csproj",
+        "packagesPath": "C:\\Users\\JakeKuo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ProductService\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/jakekuo/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\JakeKuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -106,6 +125,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -126,6 +150,10 @@
               "target": "Package",
               "version": "[2.64.0, )"
             },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.7, )"
@@ -139,6 +167,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.7, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
             }
           },
           "imports": [
@@ -160,7 +192,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

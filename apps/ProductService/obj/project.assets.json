@@ -5132,24 +5132,32 @@
     ]
   },
   "packageFolders": {
-    "/home/jakekuo/.nuget/packages/": {}
+    "C:\\Users\\JakeKuo\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/jakekuo/code/tickstream/apps/ProductService/ProductService.csproj",
+      "projectUniqueName": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ProductService\\ProductService.csproj",
       "projectName": "ProductService",
-      "projectPath": "/home/jakekuo/code/tickstream/apps/ProductService/ProductService.csproj",
-      "packagesPath": "/home/jakekuo/.nuget/packages/",
-      "outputPath": "/home/jakekuo/code/tickstream/apps/ProductService/obj/",
+      "projectPath": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ProductService\\ProductService.csproj",
+      "packagesPath": "C:\\Users\\JakeKuo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ProductService\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/jakekuo/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\JakeKuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5162,6 +5170,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5224,7 +5237,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

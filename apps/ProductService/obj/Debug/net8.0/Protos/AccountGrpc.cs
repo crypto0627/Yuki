@@ -54,13 +54,9 @@ namespace GrpcServices.AccountService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::GrpcServices.AccountService.LoginReply> __Marshaller_LoginReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServices.AccountService.LoginReply.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcServices.AccountService.RememberPasswordRequest> __Marshaller_RememberPasswordRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServices.AccountService.RememberPasswordRequest.Parser));
+    static readonly grpc::Marshaller<global::GrpcServices.AccountService.LogoutRequest> __Marshaller_LogoutRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServices.AccountService.LogoutRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcServices.AccountService.RememberPasswordReply> __Marshaller_RememberPasswordReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServices.AccountService.RememberPasswordReply.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcServices.AccountService.ResetPasswordRequest> __Marshaller_ResetPasswordRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServices.AccountService.ResetPasswordRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcServices.AccountService.ResetPasswordReply> __Marshaller_ResetPasswordReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServices.AccountService.ResetPasswordReply.Parser));
+    static readonly grpc::Marshaller<global::GrpcServices.AccountService.LogoutReply> __Marshaller_LogoutReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcServices.AccountService.LogoutReply.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::GrpcServices.AccountService.RegisterRequest, global::GrpcServices.AccountService.RegisterReply> __Method_Register = new grpc::Method<global::GrpcServices.AccountService.RegisterRequest, global::GrpcServices.AccountService.RegisterReply>(
@@ -79,20 +75,12 @@ namespace GrpcServices.AccountService {
         __Marshaller_LoginReply);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcServices.AccountService.RememberPasswordRequest, global::GrpcServices.AccountService.RememberPasswordReply> __Method_RememberPassword = new grpc::Method<global::GrpcServices.AccountService.RememberPasswordRequest, global::GrpcServices.AccountService.RememberPasswordReply>(
+    static readonly grpc::Method<global::GrpcServices.AccountService.LogoutRequest, global::GrpcServices.AccountService.LogoutReply> __Method_Logout = new grpc::Method<global::GrpcServices.AccountService.LogoutRequest, global::GrpcServices.AccountService.LogoutReply>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "RememberPassword",
-        __Marshaller_RememberPasswordRequest,
-        __Marshaller_RememberPasswordReply);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcServices.AccountService.ResetPasswordRequest, global::GrpcServices.AccountService.ResetPasswordReply> __Method_ResetPassword = new grpc::Method<global::GrpcServices.AccountService.ResetPasswordRequest, global::GrpcServices.AccountService.ResetPasswordReply>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "ResetPassword",
-        __Marshaller_ResetPasswordRequest,
-        __Marshaller_ResetPasswordReply);
+        "Logout",
+        __Marshaller_LogoutRequest,
+        __Marshaller_LogoutReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -117,17 +105,106 @@ namespace GrpcServices.AccountService {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GrpcServices.AccountService.RememberPasswordReply> RememberPassword(global::GrpcServices.AccountService.RememberPasswordRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GrpcServices.AccountService.LogoutReply> Logout(global::GrpcServices.AccountService.LogoutRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+    }
+
+    /// <summary>Client for Account</summary>
+    public partial class AccountClient : grpc::ClientBase<AccountClient>
+    {
+      /// <summary>Creates a new client for Account</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public AccountClient(grpc::ChannelBase channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for Account that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public AccountClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected AccountClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected AccountClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GrpcServices.AccountService.ResetPasswordReply> ResetPassword(global::GrpcServices.AccountService.ResetPasswordRequest request, grpc::ServerCallContext context)
+      public virtual global::GrpcServices.AccountService.RegisterReply Register(global::GrpcServices.AccountService.RegisterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+        return Register(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::GrpcServices.AccountService.RegisterReply Register(global::GrpcServices.AccountService.RegisterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_Register, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcServices.AccountService.RegisterReply> RegisterAsync(global::GrpcServices.AccountService.RegisterRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RegisterAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcServices.AccountService.RegisterReply> RegisterAsync(global::GrpcServices.AccountService.RegisterRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_Register, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::GrpcServices.AccountService.LoginReply Login(global::GrpcServices.AccountService.LoginRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Login(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::GrpcServices.AccountService.LoginReply Login(global::GrpcServices.AccountService.LoginRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_Login, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcServices.AccountService.LoginReply> LoginAsync(global::GrpcServices.AccountService.LoginRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LoginAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcServices.AccountService.LoginReply> LoginAsync(global::GrpcServices.AccountService.LoginRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_Login, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::GrpcServices.AccountService.LogoutReply Logout(global::GrpcServices.AccountService.LogoutRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Logout(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::GrpcServices.AccountService.LogoutReply Logout(global::GrpcServices.AccountService.LogoutRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_Logout, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcServices.AccountService.LogoutReply> LogoutAsync(global::GrpcServices.AccountService.LogoutRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return LogoutAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::GrpcServices.AccountService.LogoutReply> LogoutAsync(global::GrpcServices.AccountService.LogoutRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_Logout, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected override AccountClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new AccountClient(configuration);
+      }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -138,8 +215,7 @@ namespace GrpcServices.AccountService {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_Register, serviceImpl.Register)
           .AddMethod(__Method_Login, serviceImpl.Login)
-          .AddMethod(__Method_RememberPassword, serviceImpl.RememberPassword)
-          .AddMethod(__Method_ResetPassword, serviceImpl.ResetPassword).Build();
+          .AddMethod(__Method_Logout, serviceImpl.Logout).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -151,8 +227,7 @@ namespace GrpcServices.AccountService {
     {
       serviceBinder.AddMethod(__Method_Register, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServices.AccountService.RegisterRequest, global::GrpcServices.AccountService.RegisterReply>(serviceImpl.Register));
       serviceBinder.AddMethod(__Method_Login, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServices.AccountService.LoginRequest, global::GrpcServices.AccountService.LoginReply>(serviceImpl.Login));
-      serviceBinder.AddMethod(__Method_RememberPassword, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServices.AccountService.RememberPasswordRequest, global::GrpcServices.AccountService.RememberPasswordReply>(serviceImpl.RememberPassword));
-      serviceBinder.AddMethod(__Method_ResetPassword, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServices.AccountService.ResetPasswordRequest, global::GrpcServices.AccountService.ResetPasswordReply>(serviceImpl.ResetPassword));
+      serviceBinder.AddMethod(__Method_Logout, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcServices.AccountService.LogoutRequest, global::GrpcServices.AccountService.LogoutReply>(serviceImpl.Logout));
     }
 
   }

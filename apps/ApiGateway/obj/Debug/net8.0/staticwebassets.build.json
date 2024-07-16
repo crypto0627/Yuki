@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "tsDH5vd03kyuMQw22w/BiIn6d3xqWuza/q8qLxTSoJQ=",
+  "Hash": "eJeYxqlvOO6MOoXTOv3cz7wBzsGOqFyLVKLQNOSiW1s=",
   "Source": "ApiGateway",
   "BasePath": "_content/ApiGateway",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "/home/jakekuo/code/tickstream/apps/ProductService/ProductService.csproj",
+      "Identity": "C:\\Users\\JakeKuo\\source\\repos\\Yuki\\apps\\ProductService\\ProductService.csproj",
       "Version": 2,
       "Source": "ProductService",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",

@@ -1,5 +1,5 @@
 {
-  "name": "tickstream",
+  "name": "yuki",
   "private": true,
   "scripts": {
     "build": "turbo build",

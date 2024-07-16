@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "@/styles/globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "TickStream",
-  description: "The edge ticket booking system",
+  title: "Yuki",
+  description: "The Cryptocurrency payment E-commerce",
 };
 
 export default function RootLayout({
@@ -16,8 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
