@@ -6,12 +6,19 @@ service Account {
   rpc Register (RegisterRequest) returns (RegisterReply);
   rpc Login (LoginRequest) returns (LoginReply);
   rpc Logout (LogoutRequest) returns (LogoutReply);
+  rpc GetUser (GetUserRequest) returns (GetUserReply);
+  rpc DeleteUser (DeleteUserRequest) returns (DeleteUserReply);
+  rpc UpdateUser (UpdateUserRequest) returns (UpdateUserReply);
+  rpc ChangePassword (ChangePasswordRequest) returns (ChangePasswordReply);
+  rpc RequestPasswordReset (PasswordResetRequest) returns (PasswordResetReply);
+  rpc ResetPassword (ResetPasswordRequest) returns (ResetPasswordReply);
 }
 
 message RegisterRequest {
   string email = 1;
   string username = 2;
   string password = 3;
+  string role = 4;
 }
 
 message RegisterReply {
@@ -34,6 +41,68 @@ message LogoutRequest {
 }
 
 message LogoutReply {
+  bool success = 1;
+  string message = 2;
+}
+
+message GetUserRequest {
+  string email = 1;
+}
+
+message GetUserReply {
+  bool success = 1;
+  string message = 2;
+  string username = 3;
+  string role = 4;
+}
+
+message DeleteUserRequest {
+  string email = 1;
+}
+
+message DeleteUserReply {
+  bool success = 1;
+  string message = 2;
+}
+
+message UpdateUserRequest {
+  string email = 1;
+  string newUsername = 2;
+  string newRole = 3;
+}
+
+message UpdateUserReply {
+  bool success = 1;
+  string message = 2;
+}
+
+message ChangePasswordRequest {
+  string email = 1;
+  string oldPassword = 2;
+  string newPassword = 3;
+}
+
+message ChangePasswordReply {
+  bool success = 1;
+  string message = 2;
+}
+
+message PasswordResetRequest {
+  string email = 1;
+}
+
+message PasswordResetReply {
+  bool success = 1;
+  string message = 2;
+}
+
+message ResetPasswordRequest {
+  string email = 1;
+  string token = 2;
+  string newPassword = 3;
+}
+
+message ResetPasswordReply {
   bool success = 1;
   string message = 2;
 }

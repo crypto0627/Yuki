@@ -4,5 +4,6 @@ namespace GrpcServices.Models
 {
     public class User: IdentityUser
     {
+         public required string Role { get; set; }
     }
 }

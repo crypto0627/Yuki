@@ -11,7 +11,17 @@ builder.Services.AddSwaggerGen();
 // Configure gRPC client
 builder.Services.AddGrpcClient<GrpcServices.AccountService.Account.AccountClient>(o =>
 {
-    o.Address = new Uri("http://localhost:5047"); // 修改为 gRPC 服务的地址
+    o.Address = new Uri("http://localhost:5047");
+});
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
 });
 
 var app = builder.Build();
@@ -23,6 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAllOrigins");
 app.UseAuthorization();
 
 app.MapControllers();

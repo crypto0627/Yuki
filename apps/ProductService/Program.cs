@@ -3,6 +3,8 @@ using GrpcServices.Models;
 using GrpcServices.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,16 @@ builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<AccountDbContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddControllers();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
 
 var app = builder.Build();
 
@@ -29,6 +41,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+
+app.UseCors("AllowAllOrigins");
 
 app.UseRouting();
 app.UseAuthentication();

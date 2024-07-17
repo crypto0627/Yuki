@@ -1,9 +1,18 @@
+'use client';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { LockClosedIcon } from '@heroicons/react/20/solid'
-
+import { redirect } from 'next/navigation'
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Register = () => {
+    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [checkPassword, setCheckPassword] = useState('');
+    const [role, setRole] = useState('');
+
     let [isOpen, setIsOpen] = useState(false)
 
     const closeModal = () => {
@@ -13,6 +22,62 @@ const Register = () => {
     const openModal = () => {
         setIsOpen(true)
     }
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+
+        if (password !== checkPassword) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Passwords do not match!',
+            });
+            return;
+        }
+
+        if (!role) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please select a role!',
+            });
+            return;
+        }
+        
+        try {
+            const response = await axios.post('http://localhost:5059/api/Account/register', {
+                email,
+                username,
+                password,
+                role,
+            });
+    
+            if (response.data.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration successful!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                setTimeout(() => {
+                    redirect('/');
+                }, 1500);
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: response.data.message,
+                });
+            }
+        } catch (error) {
+            console.error('Error registering:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'An error occurred during registration. Please try again.',
+            });
+        }
+    };
 
     return (
         <>
@@ -78,6 +143,7 @@ const Register = () => {
                                                             required
                                                             className="relative block w-full appearance-none rounded-none rounded-t-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                                             placeholder="Email address"
+                                                            onChange={(e) => setEmail(e.target.value)}
                                                         />
                                                     </div>
                                                     <div>
@@ -92,6 +158,7 @@ const Register = () => {
                                                             required
                                                             className="relative block w-full appearance-none rounded-none rounded-t-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                                             placeholder="UserName"
+                                                            onChange={(e) => setUsername(e.target.value)}
                                                         />
                                                     </div>
                                                     <div>
@@ -106,6 +173,7 @@ const Register = () => {
                                                             required
                                                             className="relative block w-full appearance-none rounded-none rounded-b-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                                             placeholder="Password"
+                                                            onChange={(e) => setPassword(e.target.value)}
                                                         />
                                                     </div>
                                                     <div>
@@ -120,7 +188,30 @@ const Register = () => {
                                                             required
                                                             className="relative block w-full appearance-none rounded-none rounded-b-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                                                             placeholder="Check password"
+                                                            onChange={(e)=>setCheckPassword(e.target.value)}
                                                         />
+                                                    </div>
+                                                    <div>
+                                                        <label htmlFor="role" className="sr-only">Role:</label>
+                                                        <select
+                                                            id="role"
+                                                            name="role"
+                                                            className="relative block w-full appearance-none rounded-none rounded-b-md border border-grey500 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                                            value={role}
+                                                            onChange={(e) => setRole(e.target.value)}
+                                                            required
+                                                        >
+                                                            <option value="">Select a role</option>
+                                                            <option value="Software Engineer">Software Engineer</option>
+                                                            <option value="Student">Student</option>
+                                                            <option value="Historian">Historian</option>
+                                                            <option value="Geologist">Geologist</option>
+                                                            <option value="Mechanical Engineer">Mechanical Engineer</option>
+                                                            <option value="Financier">Financier</option>
+                                                            <option value="Anthropologist">Anthropologist</option>
+                                                            <option value="Biologist">Biologist</option>
+                                                            <option value="Admin">Admin</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 
@@ -143,6 +234,7 @@ const Register = () => {
                                                     <button
                                                         type="submit"
                                                         className="group relative flex w-full justify-center rounded-md border border-transparent bg-dodgerblue py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                                        onClick={handleSubmit}
                                                     >
                                                         <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                                                             <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
@@ -151,12 +243,6 @@ const Register = () => {
                                                     </button>
                                                 </div>
                                             </form>
-                                            <div className="flex items-center justify-center my-8">
-                                                <hr className="border-t border-gray-300 flex-grow mx-4" />
-                                                <h2 className="text-2xl font-bold">OR</h2>
-                                                <hr className="border-t border-gray-300 flex-grow mx-4" />
-                                            </div>
-                                            
                                         </div>
                                     </div>
 
